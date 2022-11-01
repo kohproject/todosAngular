@@ -1,0 +1,29 @@
+<div 
+id={{taskid}}
+[ngClass]="{
+'block__todo':true,
+'blockDone':doneBool,
+'blockSure':getSure(taskid)}">
+
+  <div class="wide80 rel">
+    <h3>{{ todo.name }}</h3>
+    <p>priority:{{ todo.importance }}</p>
+
+    <app-btn (click)="toggleDone()" 
+    [doneBool]="getDoneStatus()"
+    [markStatus]=true
+    [txt]="getMarkText()"></app-btn>
+
+  </div>
+
+  <div class="wide20 rel">
+    <app-btn (click)="shoRUsure(todo.id)" 
+    [deleteStatus]=true
+    txt="delete" bg="#fff"></app-btn>
+  
+  </div>
+  <div class="inner inner__ru-sure">
+    <h4>Are you sure you want to delete this task?</h4>
+    <button (click)="removeItm(todo.id)">Yes</button> | <button (click)="shoRUsure('')">No</button>
+  </div>
+</div>

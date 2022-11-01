@@ -1,0 +1,14 @@
+<div class="wrapper__tasks">
+  <div class="wrap__tasks">
+    <app-add-task [complete]="getCompleteBool()" 
+      [tlen]="getTaskLen()" 
+      (EmitAddTask)="addTaskItm($event)"></app-add-task>
+      <h2>{{headTask}}</h2>
+    <ul [ngClass]="{'newItm':newItmBool}">
+      <li *ngFor="let task of tasksArr">
+        <app-taskblock [todo]="task" [taskid]="task.id"
+        (emitRemoveItm)="deleteTask(task.id)"></app-taskblock>
+      </li>
+    </ul>
+  </div>
+</div>

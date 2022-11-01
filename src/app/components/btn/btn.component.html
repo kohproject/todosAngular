@@ -1,0 +1,8 @@
+<button  
+[ngStyle]="{'background-color':bg}" 
+[ngClass]="{'done':doneBool}" 
+class="btn"
+[class.hid]="btnShoStatus"
+[class.addTaskBtn]="addTaskStatus"
+[class.markBtn]="markStatus"
+[class.deleteBtn]="deleteStatus">{{txt}}</button>

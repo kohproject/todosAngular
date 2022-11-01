@@ -1,0 +1,29 @@
+<app-btn (click)="openNewTask()" [addTaskStatus]="true" 
+    bg="#00889a" txt="add task" [btnShoStatus]=openBool></app-btn>
+<fieldset [ngClass]="{'open':openBool}"><form>
+    <div class="add-task">
+        <h4>Add new task</h4>
+        <div class="flex col">
+        <input type="text" name="addTask" class="inp__add-task" 
+        [(ngModel)]="addTask"
+        id="inp_add-task" />
+      <p class="flex txt__priority">
+        <label>Priority:</label>
+        <select [(ngModel)]="taskPriority" id="sel__priority" name="taskPriority">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        </p>
+        </div>
+        <app-btn (click)="clicked()" 
+         [addTaskStatus]="true"  
+         txt="add new task" 
+         bg="#00889a"></app-btn>
+      
+    </div>
+  </form>
+  <a class="close-win" (click)="openNewTask()"></a>
+</fieldset>
